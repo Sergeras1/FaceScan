@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Network.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\all\source.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jaricom.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcapimin.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcapistd.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcarith.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jccoefct.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jccolor.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcdctmgr.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jchuff.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcinit.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcmainct.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcmarker.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcmaster.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcomapi.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcparam.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcprepct.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jcsample.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jctrans.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdapimin.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdapistd.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdarith.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdatadst.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdatasrc.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdcoefct.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdcolor.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jddctmgr.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdhuff.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdinput.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdmainct.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdmarker.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdmaster.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdmerge.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdpostct.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdsample.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdtrans.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jerror.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jfdctflt.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jfdctfst.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jfdctint.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jidctflt.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jidctfst.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jidctint.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jmemmgr.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jmemnobs.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jquant1.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jquant2.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jutils.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\rdbmp.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\rdcolmap.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\rdgif.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\rdppm.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\rdrle.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\rdswitch.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\rdtarga.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\transupp.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\wrbmp.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\wrgif.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\wrppm.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\wrrle.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\wrtarga.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\arm\arm_init.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\arm\filter_neon_intrinsics.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\arm\palette_neon_intrinsics.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\png.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngerror.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngget.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngmem.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngpread.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngread.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngrio.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngrtran.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngrutil.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngset.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngtrans.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngwio.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngwrite.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngwtran.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngwutil.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\adler32.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\compress.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\crc32.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\deflate.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\gzclose.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\gzlib.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\gzread.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\gzwrite.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\infback.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\inffast.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\inflate.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\inftrees.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\trees.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\uncompr.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\zutil.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\cderror.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\cdjpeg.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jconfig.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jdct.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jerror.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jinclude.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jmemsys.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jmorecfg.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jpegint.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jpeglib.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\jversion.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libjpeg\transupp.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\png.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngconf.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngdebug.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pnginfo.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pnglibconf.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngpriv.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\libpng\pngstruct.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\crc32.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\deflate.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\gzguts.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\inffast.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\inffixed.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\inflate.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\inftrees.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\trees.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\zconf.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\zlib.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Libraries-C++\dlib-19.24\dlib\external\zlib\zutil.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
