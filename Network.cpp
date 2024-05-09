@@ -9,8 +9,7 @@
 #include <string>
 #include <Windows.h>
 #include <thread>
-
-
+#include <chrono>
 
 using namespace dlib;
 using namespace std;
@@ -101,14 +100,8 @@ void processVideo(cv::VideoCapture& cap) {
         imshow("Video", frame); // показывать рамку из окна
 
         char key = (char)waitKey(30); // получить нажатие кнопки
-        //  cout << "Нажмите C для снимка";
-        if ((key == 'q') || (key == 'Q')) {
-            // если ‘q’ нажата, то останавливается программа
-            cout << "Стоп" << endl;
-            //stopThreads = true;
-            break;
-        }
-        else if (key == 'c') {
+       
+         if (key == 'c') {
 
             lock_guard<std::mutex> lock(mtx);
             string filename = "snapshot.jpg";
@@ -126,8 +119,22 @@ void processVideo(cv::VideoCapture& cap) {
     //destroyAllWindows(); // Закрывает все окна, которые были открыты во время выполнения программы.
 }
 
+void threadDescriptor(std::vector<matrix<rgb_pixel>> &faces1, shape_predictor &sp,
+    frontal_face_detector &detector, matrix<rgb_pixel> &img1) {
+    
+    for (auto face : detector(img1))
+    {
+        
+        auto shape = sp(img1, face);
+        matrix<rgb_pixel> face_chip;
+        extract_image_chip(img1, get_face_chip_details(shape, 150), face_chip);
+        faces1.push_back(move(face_chip));
+    }
+}
+
 void processNeuralNetwork() {
     while (!stopThreads) {
+        auto begin = chrono::steady_clock::now();
         std::unique_lock<std::mutex> lock(mtx);
         ConVar.wait(lock, [] {return takenSnap; });
 
@@ -165,7 +172,10 @@ void processNeuralNetwork() {
 
         // Находим области лиц и вычисляем дескрипторы для каждого лица
         std::vector<matrix<rgb_pixel>> faces1, faces2;
-        for (auto face : detector(img1))
+        threadDescriptor(faces1, sp, detector, img1);
+        threadDescriptor(faces2, sp, detector, img2);
+         
+        /*for (auto face : detector(img1))
         {
             auto shape = sp(img1, face);
             matrix<rgb_pixel> face_chip;
@@ -179,7 +189,7 @@ void processNeuralNetwork() {
             matrix<rgb_pixel> face_chip;
             extract_image_chip(img2, get_face_chip_details(shape, 150), face_chip);
             faces2.push_back(move(face_chip));
-        }
+        }*/
 
         // Сравниваем дескрипторы лиц
         std::vector<matrix<float, 0, 1>> face_descriptors1 = net(faces1);
@@ -261,14 +271,17 @@ void processNeuralNetwork() {
                     file << res;
                     std::string value = to_string(res);
                     //if (std::getline(file, value)) {
-                        std::cout << "Прочитанное значение: " << value << '\n';
+                    std::cout << "Прочитанное значение: " << value << '\n';
 
-                        // Отправляем значение в COM-порт
-                        DWORD bytesWritten;
-                        if (WriteFile(serialHandle, value.c_str(), value.length(), &bytesWritten, NULL)) {
-                            std::cout << "Значение успешно отправлено в COM-порт\n";
-                        }
+                    // Отправляем значение в COM-порт
+                    DWORD bytesWritten;
+                    if (WriteFile(serialHandle, value.c_str(), value.length(), &bytesWritten, NULL)) {
+                        std::cout << "Значение успешно отправлено в COM-порт\n";
+                    }
                     //}
+                    auto end = chrono::steady_clock::now();
+                    auto timeMs = chrono::duration_cast<chrono::milliseconds>(end - begin);
+                    cout << "Time: " << timeMs.count() << "ms\n";
                 }
             }
         }
@@ -293,6 +306,7 @@ int main()
         thread neuralNetworkThread(processNeuralNetwork);
         videoThread.join();
         neuralNetworkThread.join();
+
     }
 
     catch (...) {
