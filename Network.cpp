@@ -273,11 +273,12 @@ void processNeuralNetwork() {
                     comPort(res);
                     
                 }
-                auto end = chrono::steady_clock::now();
-                auto timeMs = chrono::duration_cast<chrono::milliseconds>(end - begin);
-                cout << "Time: " << timeMs.count() << "ms\n";
+                
             }
         }
+        auto end = chrono::steady_clock::now();
+        auto timeMs = chrono::duration_cast<chrono::milliseconds>(end - begin);
+        cout << "Time: " << timeMs.count() << "ms\n";
     }
     std::unique_lock<std::mutex> unlock(mtx);
 }
