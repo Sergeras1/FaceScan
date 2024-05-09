@@ -132,6 +132,67 @@ void threadDescriptor(std::vector<matrix<rgb_pixel>> &faces1, shape_predictor &s
     }
 }
 
+int comPort(int res) {
+    // Открываем последовательный порт
+    HANDLE serialHandle;
+    /*
+    объявляется переменная `serialHandle` типа `HANDLE`
+    `HANDLE` - это дескриптор, используемый для обращения к открытым файлам,
+    дескрипторам и различным ресурсам операционной системы Windows
+    */
+
+    serialHandle = CreateFile(L"COM3", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);/*
+    открывает последовательный порт `COM3` для чтения и записи.
+    `CreateFile` - это функция Windows для открытия файла или устройства
+    */
+
+    //Выполняются базовые настройки для COM-порта
+    DCB serialParams = { 0 };
+    serialParams.DCBlength = sizeof(serialParams); // размер структуры `DCB`
+
+    GetCommState(serialHandle, &serialParams);//получение данных порта 
+    //Далее изменяются данные
+    serialParams.BaudRate = CBR_9600;// скорость передачи данных
+    serialParams.ByteSize = 8;// размер байта
+    serialParams.StopBits = ONESTOPBIT; // стоп-биты
+    serialParams.Parity = NOPARITY;// проверка четности
+    SetCommState(serialHandle, &serialParams);// все измененные выше значения сохраняются 
+
+    // Set timeouts
+    COMMTIMEOUTS timeout = { 0 };
+
+    /*
+    установливаются значения таймаутов чтения и записи в
+    50 миллисекунд и 10 миллисекунд, соответственно
+    */
+
+    timeout.ReadIntervalTimeout = 50;
+    timeout.ReadTotalTimeoutConstant = 50;
+    timeout.ReadTotalTimeoutMultiplier = 50;
+    timeout.WriteTotalTimeoutConstant = 50;
+    timeout.WriteTotalTimeoutMultiplier = 10;
+
+    SetCommTimeouts(serialHandle, &timeout);
+    std::ofstream file("data.txt");
+    if (!file.is_open()) {
+        std::cout << "Не удалось открыть файл\n";
+        CloseHandle(serialHandle);
+        //return 1;
+    }
+    file << res;
+    std::string value = to_string(res);
+    //if (std::getline(file, value)) {
+    std::cout << "Прочитанное значение: " << value << '\n';
+
+    // Отправляем значение в COM-порт
+    DWORD bytesWritten;
+    if (WriteFile(serialHandle, value.c_str(), value.length(), &bytesWritten, NULL)) {
+        std::cout << "Значение успешно отправлено в COM-порт\n";
+    }
+    //}
+    return res;
+}
+
 void processNeuralNetwork() {
     while (!stopThreads) {
         auto begin = chrono::steady_clock::now();
@@ -175,22 +236,6 @@ void processNeuralNetwork() {
         threadDescriptor(faces1, sp, detector, img1);
         threadDescriptor(faces2, sp, detector, img2);
          
-        /*for (auto face : detector(img1))
-        {
-            auto shape = sp(img1, face);
-            matrix<rgb_pixel> face_chip;
-            extract_image_chip(img1, get_face_chip_details(shape, 150), face_chip);
-            faces1.push_back(move(face_chip));
-        }
-
-        for (auto face : detector(img2))
-        {
-            auto shape = sp(img2, face);
-            matrix<rgb_pixel> face_chip;
-            extract_image_chip(img2, get_face_chip_details(shape, 150), face_chip);
-            faces2.push_back(move(face_chip));
-        }*/
-
         // Сравниваем дескрипторы лиц
         std::vector<matrix<float, 0, 1>> face_descriptors1 = net(faces1);
         std::vector<matrix<float, 0, 1>> face_descriptors2 = net(faces2);
@@ -212,7 +257,10 @@ void processNeuralNetwork() {
                     cout << " \n";
                     cout << "====================================== \n";
                     res = 0;
-
+                    comPort(res);
+                    /*auto end = chrono::steady_clock::now();
+                    auto timeMs = chrono::duration_cast<chrono::milliseconds>(end - begin);
+                    cout << "Time: " << timeMs.count() << "ms\n";*/
                 }
                 else {
                     cout << " \n";
@@ -221,68 +269,13 @@ void processNeuralNetwork() {
                     cout << " \n";
                     cout << "====================================== \n";
                     res = 1;
-
-                    // Открываем последовательный порт
-                    HANDLE serialHandle;
-                    /*
-                    объявляется переменная `serialHandle` типа `HANDLE`
-                    `HANDLE` - это дескриптор, используемый для обращения к открытым файлам,
-                    дескрипторам и различным ресурсам операционной системы Windows
-                    */
-
-                    serialHandle = CreateFile(L"COM3", GENERIC_READ | GENERIC_WRITE, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, 0);/*
-                    открывает последовательный порт `COM3` для чтения и записи.
-                    `CreateFile` - это функция Windows для открытия файла или устройства
-                    */
-
-                    //Выполняются базовые настройки для COM-порта
-                    DCB serialParams = { 0 };
-                    serialParams.DCBlength = sizeof(serialParams); // размер структуры `DCB`
-
-                    GetCommState(serialHandle, &serialParams);//получение данных порта 
-                    //Далее изменяются данные
-                    serialParams.BaudRate = CBR_9600;// скорость передачи данных
-                    serialParams.ByteSize = 8;// размер байта
-                    serialParams.StopBits = ONESTOPBIT; // стоп-биты
-                    serialParams.Parity = NOPARITY;// проверка четности
-                    SetCommState(serialHandle, &serialParams);// все измененные выше значения сохраняются 
-
-                    // Set timeouts
-                    COMMTIMEOUTS timeout = { 0 };
-
-                    /*
-                    установливаются значения таймаутов чтения и записи в
-                    50 миллисекунд и 10 миллисекунд, соответственно
-                    */
-
-                    timeout.ReadIntervalTimeout = 50;
-                    timeout.ReadTotalTimeoutConstant = 50;
-                    timeout.ReadTotalTimeoutMultiplier = 50;
-                    timeout.WriteTotalTimeoutConstant = 50;
-                    timeout.WriteTotalTimeoutMultiplier = 10;
-
-                    SetCommTimeouts(serialHandle, &timeout);
-                    std::ofstream file("data.txt");
-                    if (!file.is_open()) {
-                        std::cout << "Не удалось открыть файл\n";
-                        CloseHandle(serialHandle);
-                        //return 1;
-                    }
-                    file << res;
-                    std::string value = to_string(res);
-                    //if (std::getline(file, value)) {
-                    std::cout << "Прочитанное значение: " << value << '\n';
-
-                    // Отправляем значение в COM-порт
-                    DWORD bytesWritten;
-                    if (WriteFile(serialHandle, value.c_str(), value.length(), &bytesWritten, NULL)) {
-                        std::cout << "Значение успешно отправлено в COM-порт\n";
-                    }
-                    //}
-                    auto end = chrono::steady_clock::now();
-                    auto timeMs = chrono::duration_cast<chrono::milliseconds>(end - begin);
-                    cout << "Time: " << timeMs.count() << "ms\n";
+                   
+                    comPort(res);
+                    
                 }
+                auto end = chrono::steady_clock::now();
+                auto timeMs = chrono::duration_cast<chrono::milliseconds>(end - begin);
+                cout << "Time: " << timeMs.count() << "ms\n";
             }
         }
     }
@@ -301,12 +294,15 @@ int main()
             cout << " Нет подключения к камере! " << endl; // Вывод в консоль сообщения
             return -1;
         }
+        
 
         thread videoThread(processVideo, ref(cap));
         thread neuralNetworkThread(processNeuralNetwork);
+
         videoThread.join();
         neuralNetworkThread.join();
 
+        
     }
 
     catch (...) {
